@@ -1,0 +1,25 @@
+.app-name {
+    text-align: center;
+}
+
+.study-pal-logo {
+    display: flex;
+    margin: auto;
+}
+
+.study-choice-buttons {
+    background-color: #657D89;
+    border-radius: 15px;
+    border: none;
+    color: #FFF;
+    display: inline-flex;
+    height: 50px;
+    margin: auto 20px;
+    padding: 10px;
+        &:hover {
+            background-color: #8497A1;
+            box-shadow: 1px 1px #51646E;
+            cursor: pointer;
+            
+        }
+}

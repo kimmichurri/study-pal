@@ -20,8 +20,11 @@ export default class StudyApp extends Component {
     render() {
         return (
             <div>
-                <h1>Study Pal</h1>
-                <img src={brainLogo} alt="logo" />
+                <h1 className="app-name">Study Pal</h1>
+                <img src={brainLogo} className="study-pal-logo" alt="logo" />
+                <button className="study-choice-buttons">Would you like to pick up where you left off?</button>
+                <button className="study-choice-buttons">Let's Go!(Array Prototype Methods)</button>
+                <button className="study-choice-buttons">Let's Go!(String Prototype Methods)</button>
             </div>
         )
     }
