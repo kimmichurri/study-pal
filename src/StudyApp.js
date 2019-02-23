@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import brainLogo from './assets/brainimage.png';
 import Header from './Header'
-//import css for studyApp
+import Flashcard from './Flashcard'
 
 
 export default class StudyApp extends Component {
@@ -24,9 +24,12 @@ export default class StudyApp extends Component {
             <div>
                 <Header />
                 <img src={brainLogo} className="study-pal-logo" alt="logo" />
-                <button className="study-choice-buttons">Would you like to pick up where you left off?</button>
-                <button className="study-choice-buttons">Let's Go!(Array Prototype Methods)</button>
-                <button className="study-choice-buttons">Let's Go!(String Prototype Methods)</button>
+                <section className= "study-choice-buttons-container">
+                    <button className="study-choice-buttons">Would you like to pick up where you left off?</button>
+                    <button className="study-choice-buttons">Let's Go!(Array Prototype Methods)</button>
+                    <button className="study-choice-buttons">Let's Go!(String Prototype Methods)</button>
+                </section>
+                <Flashcard />
             </div>
         )
     }
