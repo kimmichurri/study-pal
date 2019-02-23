@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import brainLogo from './assets/brainimage.png';
+import Header from './Header'
 //import css for studyApp
 
 
@@ -10,6 +11,7 @@ export default class StudyApp extends Component {
             questionCategory: null,
             flashcards: [],
             incorrectlyAnsweredFlashcards: [],
+            showButtonsAndLogo: true
         }
     }
 
@@ -20,7 +22,7 @@ export default class StudyApp extends Component {
     render() {
         return (
             <div>
-                <h1 className="app-name">Study Pal</h1>
+                <Header />
                 <img src={brainLogo} className="study-pal-logo" alt="logo" />
                 <button className="study-choice-buttons">Would you like to pick up where you left off?</button>
                 <button className="study-choice-buttons">Let's Go!(Array Prototype Methods)</button>
