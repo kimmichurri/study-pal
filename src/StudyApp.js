@@ -10,7 +10,7 @@ export default class StudyApp extends Component {
         super();
         this.state = {
             flashcardData: stringAndArrayPrototypeMethods,
-            flashcards: []
+            flashcards: stringAndArrayPrototypeMethods
             // studyBank: []
             // in component did mount set the state
         }
@@ -19,7 +19,6 @@ export default class StudyApp extends Component {
     chooseArrayCategory = (e) => {
         if (e.target.innerText === 'Array Prototype Methods') {
             let arrayQuestions = this.state.flashcardData.filter((question) => {
-                console.log(question.category)
                 return question.category === "Array Methods"
             })
             this.setState({
@@ -36,7 +35,7 @@ export default class StudyApp extends Component {
             this.setState({
                 flashcards: stringQuestions
             })
-        }
+        }   
     }
 
     render() {
@@ -49,7 +48,7 @@ export default class StudyApp extends Component {
                     <button onClick={this.chooseArrayCategory} className="study-choice-buttons">Array Prototype Methods</button>
                     <button onClick={this.chooseStringCategory} className="study-choice-buttons">String Prototype Methods</button>
                 </section>
-                <Flashcard />
+                <Flashcard flashcards={this.state.flashcards}/>
             </div>
         )
     }
