@@ -5,7 +5,21 @@
 }
 
 .answer-text {
+    background-color: $inactive-button-color;
+    box-shadow: $inactive-button-box-shadow;
+    border: none;
+    border-radius: 15px;
+    color: #FFF;
+    display: flex;
     font-family: $answer-choice-text-font-stack;
     font-size: 30px;
-    text-align: center;
+    margin: 20px auto;
+    min-width: 90%;
+    padding: 10px;
+    justify-content: center;
+        &:hover {
+            background-color: $active-button-color;
+            box-shadow: $active-button-box-shadow;
+            cursor: pointer;
+        }
 }

@@ -10,10 +10,10 @@
 }
 
 .study-choice-buttons {
-    background-color: #657D89;
+    background-color: $inactive-button-color;
     border-radius: 15px;
     border: none;
-    box-shadow: 2px 1px #51646E;
+    box-shadow: $inactive-button-box-shadow;
     color: #FFF;
     font-family: $user-choice-buttons-font-stack;
     font-size: 20px;
@@ -22,9 +22,8 @@
     padding: 10px;
     width: 25%;
         &:hover {
-            background-color: #8497A1;
-            box-shadow: 1px 1px #657D89;
+            background-color: $active-button-color;
+            box-shadow: $active-button-box-shadow;
             cursor: pointer;
-            
         }
 }
