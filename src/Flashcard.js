@@ -1,9 +1,10 @@
 import React from 'react';
+import DisplayQuestionsAndAnswers from './DisplayQuestionsAndAnswers'
 
 export default function Flashcard () {
     return (
-        <article>
-            <p className="flashcard-container">I am a Flashcard! I will hold the questions and answers here.</p>
+        <article className="flashcard-container">
+            <DisplayQuestionsAndAnswers />
         </article>
     )
 }

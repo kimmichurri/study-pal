@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import brainLogo from './assets/brainimage.png';
+import brainLogo from './assets/brainimg.png';
 import Header from './Header'
 import Flashcard from './Flashcard'
+import PrototypeMethodsData from './PrototypeMethodsData'
 
 
 export default class StudyApp extends Component {
@@ -10,13 +11,15 @@ export default class StudyApp extends Component {
         this.state = {
             questionCategory: null,
             flashcards: [],
-            incorrectlyAnsweredFlashcards: [],
-            showButtonsAndLogo: true
+            studyBank: [],
+            showButtonsAndLogo: true,
+            showFlashCard: false
         }
     }
 
     // chooseStudyCategory = () => {
-    //    user clicks on either string, array, or archive 
+    //      user clicks on either string, array, or archive 
+    //      set state this.showButtonsAndLogo: false;
     // }
 
     render() {
@@ -25,9 +28,9 @@ export default class StudyApp extends Component {
                 <Header />
                 <img src={brainLogo} className="study-pal-logo" alt="logo" />
                 <section className= "study-choice-buttons-container">
-                    <button className="study-choice-buttons">Would you like to pick up where you left off?</button>
-                    <button className="study-choice-buttons">Let's Go!(Array Prototype Methods)</button>
-                    <button className="study-choice-buttons">Let's Go!(String Prototype Methods)</button>
+                    <button className="study-choice-buttons">Study Bank</button>
+                    <button className="study-choice-buttons">Array Prototype Methods</button>
+                    <button className="study-choice-buttons">String Prototype Methods</button>
                 </section>
                 <Flashcard />
             </div>
