@@ -28,6 +28,17 @@ export default class StudyApp extends Component {
         }   
     }
 
+    chooseStringCategory = (e) => {
+        if (e.target.innerText === 'String Prototype Methods') {
+            let stringQuestions = this.state.flashcardData.filter((question) => {
+                return question.category === "String Methods"
+            })
+            this.setState({
+                flashcards: stringQuestions
+            })
+        }
+    }
+
     render() {
         return (
             <div>
@@ -36,7 +47,7 @@ export default class StudyApp extends Component {
                 <section className= "study-choice-buttons-container">
                     <button className="study-choice-buttons">Study Bank</button>
                     <button onClick={this.chooseArrayCategory} className="study-choice-buttons">Array Prototype Methods</button>
-                    <button className="study-choice-buttons">String Prototype Methods</button>
+                    <button onClick={this.chooseStringCategory} className="study-choice-buttons">String Prototype Methods</button>
                 </section>
                 <Flashcard />
             </div>
