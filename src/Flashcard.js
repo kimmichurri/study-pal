@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import DisplayQuestionsAndAnswers from './DisplayQuestionsAndAnswers';
-import Feedback from './Feedback'
 
 export default class Flashcard extends Component {
     constructor() {
         super();
         this.state = {
-            correctAnswer: null
+            correctAnswer: null,
+            currentFlashcardIndex: 0
         }
     }
 
@@ -23,20 +23,27 @@ export default class Flashcard extends Component {
             })
         }
     }
+
+    showNextFlashcard = (e) => {
+        this.setState({
+            correctAnswer: null,
+            currentFlashcardIndex: this.state.currentFlashcardIndex + 1
+        })
+        if (e.target.innerText === "Keep Trying!") {
+            console.log("put this into study bank")
+        } 
+    }
     
-    // currentQuestion() {
-    //     console.log(this.state.currentFlashcards)
-    // }
 
     render() {
         return (
             <article className="flashcard-container">
                 <DisplayQuestionsAndAnswers 
-                    flashcard={this.props.flashcards[0]} 
+                    flashcard={this.props.flashcards[this.state.currentFlashcardIndex]} 
                     validateAnswer={this.validateAnswer}
                     correctAnswer={this.state.correctAnswer}
+                    showNextFlashcard={this.showNextFlashcard}
                     />
-                {/* <Feedback correctAnswer={this.state.correctAnswer}/> */}
             </article>
         )
     }

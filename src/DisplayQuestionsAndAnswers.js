@@ -8,11 +8,17 @@ export default function DisplayQuestionsAndAnswers (props) {
    } 
    if (props.correctAnswer === true) {
     return (
-        <p>That's right!</p>
+        <section>
+            <p className="question-text">That's right!</p>
+            <button onClick={props.showNextFlashcard} className="answer-text">Crushed it! Keep Going!</button>
+        </section>
     )
-} else if (props.correctAnswer === false) {
+    } else if (props.correctAnswer === false) {
     return (
-        <p>Nice try, but wrong!</p>
+        <section>
+            <p className="question-text">Nice try, but incorrect. Let's add this question to your Study Bank for later!</p>
+            <button onClick={props.showNextFlashcard} className="answer-text">Keep Trying!</button>
+        </section>
     )
 } 
    
