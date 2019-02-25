@@ -31,7 +31,6 @@ export default class Flashcard extends Component {
             currentFlashcardIndex: this.state.currentFlashcardIndex + 1
         })
         if (e.target.innerText === "Keep Trying!") {
-            console.log(this.props.flashcards[this.state.currentFlashcardIndex]);
             let incorrectlyAnsweredCard = this.props.flashcards[this.state.currentFlashcardIndex];
             this.props.studyBank.push(incorrectlyAnsweredCard);
             localStorage.setItem("study bank cards", JSON.stringify(this.props.studyBank));
@@ -48,7 +47,7 @@ export default class Flashcard extends Component {
                     validateAnswer={this.validateAnswer}
                     correctAnswer={this.state.correctAnswer}
                     showNextFlashcard={this.showNextFlashcard}
-                    />
+                />
             </article>
         )
     }

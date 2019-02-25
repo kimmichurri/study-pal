@@ -12,16 +12,20 @@ export default class StudyApp extends Component {
             flashcardData: stringAndArrayPrototypeMethods,
             // in component did mount set the value of flashcardData to the whole dataset
             flashcards: [],
-            studyBank: []
+            studyBank: JSON.parse(localStorage.getItem("study bank cards")) || []
             // if study bank is empty disable the button, if study bank has length we will pull flashcards from local storage when the button is clicked
         }
     }
 
-    // chooseStudyBank = (e) => {
-    // if (e.targe.innerText === 'Study Bank') {
-    // this.setState({ flashcards: studyBank})
-    // }
-    // }
+    chooseStudyBank = (e) => {
+        console.log('click', e.target)
+        console.log(this.state.flashcards)
+        if (e.target.innerText === 'Study Bank') {
+            this.setState({
+                flashcards: this.state.studyBank
+            })
+        }
+    }
 
     chooseArrayCategory = (e) => {
         if (e.target.innerText === 'Array Prototype Methods') {
@@ -49,9 +53,9 @@ export default class StudyApp extends Component {
         return (
             <div>
                 <Header />
-                <img src={brainLogo} className="study-pal-logo" alt="logo" />
+                <img src={brainLogo} className="study-pal-logo" alt="brain-logo" />
                 <section className= "study-choice-buttons-container">
-                    <button className="study-choice-buttons">Study Bank</button>
+                    <button onClick={this.chooseStudyBank} className="study-choice-buttons">Study Bank</button>
                     <button onClick={this.chooseArrayCategory} className="study-choice-buttons">Array Prototype Methods</button>
                     <button onClick={this.chooseStringCategory} className="study-choice-buttons">String Prototype Methods</button>
                 </section>
