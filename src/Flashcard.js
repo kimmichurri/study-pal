@@ -11,7 +11,7 @@ export default class Flashcard extends Component {
     }
 
     validateAnswer =(e) => {
-        if (e.target.innerText === this.props.flashcards[0].correctAnswer) {
+        if (e.target.innerText === this.props.flashcards[this.state.currentFlashcardIndex].correctAnswer) {
             console.log("You're Right!")
             this.setState({
                 correctAnswer: true
@@ -27,6 +27,7 @@ export default class Flashcard extends Component {
     showNextFlashcard = (e) => {
         this.setState({
             correctAnswer: null,
+            //only do this if the current index is one less than the length, otherwise say the end or something and reset
             currentFlashcardIndex: this.state.currentFlashcardIndex + 1
         })
         if (e.target.innerText === "Keep Trying!") {
@@ -47,5 +48,4 @@ export default class Flashcard extends Component {
             </article>
         )
     }
-    
 }
