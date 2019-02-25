@@ -1,6 +1,20 @@
 import React from 'react';
+import Greeting from './Greeting'
 
 export default function DisplayQuestionsAndAnswers (props) {
+
+   if (props.flashcard === undefined) {
+    return <Greeting />
+   } 
+   if (props.correctAnswer === true) {
+    return (
+        <p>That's right!</p>
+    )
+} else if (props.correctAnswer === false) {
+    return (
+        <p>Nice try, but wrong!</p>
+    )
+} 
    
     return (
         <section>

@@ -10,7 +10,7 @@ export default class StudyApp extends Component {
         super();
         this.state = {
             flashcardData: stringAndArrayPrototypeMethods,
-            flashcards: stringAndArrayPrototypeMethods
+            flashcards: []
             // studyBank: []
             // in component did mount set the state
         }
