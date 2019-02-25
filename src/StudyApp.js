@@ -10,11 +10,18 @@ export default class StudyApp extends Component {
         super();
         this.state = {
             flashcardData: stringAndArrayPrototypeMethods,
-            flashcards: []
-            // studyBank: []
-            // in component did mount set the state
+            // in component did mount set the value of flashcardData to the whole dataset
+            flashcards: [],
+            studyBank: []
+            // if study bank is empty disable the button, if study bank has length we will pull flashcards from local storage when the button is clicked
         }
     }
+
+    // chooseStudyBank = (e) => {
+    // if (e.targe.innerText === 'Study Bank') {
+    // this.setState({ flashcards: studyBank})
+    // }
+    // }
 
     chooseArrayCategory = (e) => {
         if (e.target.innerText === 'Array Prototype Methods') {
@@ -48,7 +55,10 @@ export default class StudyApp extends Component {
                     <button onClick={this.chooseArrayCategory} className="study-choice-buttons">Array Prototype Methods</button>
                     <button onClick={this.chooseStringCategory} className="study-choice-buttons">String Prototype Methods</button>
                 </section>
-                <Flashcard flashcards={this.state.flashcards}/>
+                <Flashcard 
+                    flashcards={this.state.flashcards}
+                    studyBank={this.state.studyBank}
+                />
             </div>
         )
     }
