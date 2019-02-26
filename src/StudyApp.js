@@ -38,7 +38,8 @@ export default class StudyApp extends Component {
                 return question.category === "Array Methods"
             })
             this.setState({
-                flashcards: arrayQuestions
+                flashcards: arrayQuestions,
+                currentFlashcardIndex: 0
             })
         }   
     }
@@ -49,7 +50,9 @@ export default class StudyApp extends Component {
                 return question.category === "String Methods"
             })
             this.setState({
-                flashcards: stringQuestions
+                flashcards: stringQuestions,
+                currentFlashcardIndex: 0
+
             })
         }   
     }
