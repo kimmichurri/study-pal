@@ -1,3 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Greeting renders correctly 1`] = `undefined`;
+exports[`Greeting should match the snapshot 1`] = `
+<p
+  className="question-text"
+>
+  Welcome! Choose a category of flashcards to study or visit your study bank to keep practicing.
+</p>
+`;

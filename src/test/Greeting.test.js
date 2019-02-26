@@ -1,12 +1,19 @@
 import React from 'react';
-import Greeting from './Greeting.test';
+import Greeting from '../Greeting';
 import { shallow } from 'enzyme';
 
-
 describe('Greeting', () => {
+
     let wrapper;
-    
-    it('renders correctly', () => {
+  
+    beforeEach(() => {
+  
+      wrapper = shallow(
+        <Greeting />
+      )
+    });
+
+    it('should match the snapshot', () => {
         expect(wrapper).toMatchSnapshot();
-    })
-})
+      });
+});
