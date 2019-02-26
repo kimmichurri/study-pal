@@ -6,7 +6,6 @@ export default function DisplayQuestionsAndAnswers(props) {
         if (props.currentIndex === props.allFlashcards.length) {
             return (
             <StartOverNotice />)
-
         }
 
         if (props.correctAnswer) {
