@@ -15,7 +15,6 @@ export default class StudyApp extends Component {
             flashcards: [],
             studyBank: JSON.parse(localStorage.getItem("study bank cards")) || [],
             currentFlashcardIndex: 0
-            // if study bank is empty disable the button, if study bank has length we will pull flashcards from local storage when the button is clicked
         }
     }
 

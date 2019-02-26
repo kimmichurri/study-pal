@@ -6,7 +6,6 @@ export default class Flashcard extends Component {
         super();
         this.state = {
             correctAnswer: null,
-            // currentFlashcardIndex: 0
         }
     }
 

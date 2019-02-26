@@ -3,8 +3,6 @@ import StartOverNotice from './StartOverNotice';
 
 export default function DisplayQuestionsAndAnswers(props) {
 
-   
-    
         if (props.currentIndex === props.allFlashcards.length) {
             return (
             <StartOverNotice />)
