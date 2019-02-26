@@ -33,7 +33,6 @@ export default class StudyApp extends Component {
     }
 
     chooseArrayCategory = (e) => {
-        if (e.target.innerText === 'Array Prototype Methods') {
             let arrayQuestions = this.state.flashcardData.filter((question) => {
                 return question.category === "Array Methods"
             })
@@ -41,7 +40,6 @@ export default class StudyApp extends Component {
                 flashcards: arrayQuestions,
                 currentFlashcardIndex: 0
             })
-        }   
     }
 
     chooseStringCategory = (e) => {
