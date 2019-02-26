@@ -6,36 +6,35 @@ export default class Flashcard extends Component {
         super();
         this.state = {
             correctAnswer: null,
-            currentFlashcardIndex: 0
+            // currentFlashcardIndex: 0
         }
     }
 
     validateAnswer =(e) => {
-        if (e.target.innerText === this.props.flashcards[this.state.currentFlashcardIndex].correctAnswer) {
-            console.log("You're Right!")
+        if (e.target.innerText === this.props.flashcards[this.props.currentIndex].correctAnswer) {
             this.setState({
                 correctAnswer: true
             })
         } else {
-            console.log("Sorry, that is incorrect!")
             this.setState({
                 correctAnswer: false
-            })
+            }) 
+            this.sendToStudyBank() 
         }
     }
 
-    showNextFlashcard = (e) => {
+    sendToStudyBank() {
+        let incorrectlyAnsweredCard = this.props.flashcards[this.props.currentIndex];
+        this.props.studyBank.push(incorrectlyAnsweredCard);
+        localStorage.setItem("study bank cards", JSON.stringify(this.props.studyBank));
+        console.log(this.props.studyBank);
+    }
+
+    showNextFlashcard = () => {
         this.setState({
             correctAnswer: null,
-            //only do this if the current index is one less than the length, otherwise say the end or something and reset
-            currentFlashcardIndex: this.state.currentFlashcardIndex + 1
         })
-        if (e.target.innerText === "Keep Trying!") {
-            let incorrectlyAnsweredCard = this.props.flashcards[this.state.currentFlashcardIndex];
-            this.props.studyBank.push(incorrectlyAnsweredCard);
-            localStorage.setItem("study bank cards", JSON.stringify(this.props.studyBank));
-            console.log(this.props.studyBank);
-        } 
+        this.props.incrementCurrentIndex()
     }
     
 
@@ -43,10 +42,12 @@ export default class Flashcard extends Component {
         return (
             <article className="flashcard-container">
                 <DisplayQuestionsAndAnswers 
-                    flashcard={this.props.flashcards[this.state.currentFlashcardIndex]} 
+                    flashcard={this.props.flashcards[this.props.currentIndex]} 
                     validateAnswer={this.validateAnswer}
                     correctAnswer={this.state.correctAnswer}
                     showNextFlashcard={this.showNextFlashcard}
+                    currentIndex={this.props.currentIndex}
+                    allFlashcards={this.props.flashcards}
                 />
             </article>
         )
