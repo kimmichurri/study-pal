@@ -3,19 +3,25 @@ import brainLogo from './assets/brainimg.png';
 import Header from './Header'
 import Flashcard from './Flashcard'
 import Greeting from './Greeting'
-import { stringAndArrayPrototypeMethods } from './PrototypeMethodsData'
 
 
 export default class StudyApp extends Component {
     constructor() {
         super();
         this.state = {
-            flashcardData: stringAndArrayPrototypeMethods,
+            flashcardData: [],
             // in component did mount set the value of flashcardData to the whole dataset
             flashcards: [],
             studyBank: JSON.parse(localStorage.getItem("study bank cards")) || [],
             currentFlashcardIndex: 0
         }
+    }
+
+    componentDidMount() {
+        fetch('http://memoize-datasets.herokuapp.com/api/v1/KMstringAndArrayPrototypeMethods')
+            .then(response => response.json())
+            .then(PrototypeMethodsData => this.setState({flashcardData: PrototypeMethodsData.KMstringAndArrayPrototypeMethods}))
+            .catch(error => {throw new Error(error)})
     }
 
     chooseStudyBank = (e) => {
