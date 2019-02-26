@@ -1,5 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`DisplayQuestionsAndAnswers should match the snapshot if props.correct answer === false 1`] = `
+<section>
+  <p
+    className="question-text"
+  >
+    Nice try, but incorrect. Let's add this question to your Study Bank for later!
+  </p>
+  <button
+    className="answer-text"
+  >
+    Keep Trying!
+  </button>
+</section>
+`;
+
 exports[`DisplayQuestionsAndAnswers should match the snapshot if props.correct answer 1`] = `
 <section>
   <p
@@ -16,3 +31,32 @@ exports[`DisplayQuestionsAndAnswers should match the snapshot if props.correct a
 `;
 
 exports[`DisplayQuestionsAndAnswers should match the snapshot if props.currentIndex === props.allFlashcards.length 1`] = `<StartOverNotice />`;
+
+exports[`DisplayQuestionsAndAnswers should return a flashcard 1`] = `
+<section>
+  <p
+    className="question-text"
+  >
+    Which method allows you to remove whitespace from either end of a string?
+  </p>
+  <section
+    className="answer-choice-buttons-container"
+  >
+    <button
+      className="answer-text"
+    >
+      .trim()
+    </button>
+    <button
+      className="answer-text"
+    >
+      .slim()
+    </button>
+    <button
+      className="answer-text"
+    >
+      .clip()
+    </button>
+  </section>
+</section>
+`;

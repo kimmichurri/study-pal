@@ -23,6 +23,8 @@ const mockAllFlashcards = [
     }
 ]
 
+const mockQuestion = mockAllFlashcards[0].question;
+
 let mockIndex = 1;
 
 let mockCorrectAnswer;
@@ -55,6 +57,33 @@ describe('DisplayQuestionsAndAnswers', () => {
                     allFlashcards={mockAllFlashcards}
                 />
         );
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('should match the snapshot if props.correct answer === false', () => {
+        mockCorrectAnswer = false;
+        mockIndex = 2;
+
+        const wrapper = shallow(
+            <DisplayQuestionsAndAnswers 
+                flashcard={mockAllFlashcards[mockIndex]} 
+                correctAnswer={mockCorrectAnswer}
+                currentIndex={mockIndex}
+                allFlashcards={mockAllFlashcards}
+            />
+        );
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('should return a flashcard', () => {
+        mockIndex = 0;
+        wrapper = shallow(
+            <DisplayQuestionsAndAnswers 
+                flashcard={mockAllFlashcards[mockIndex]} 
+                currentIndex={mockIndex}
+                allFlashcards={mockAllFlashcards}
+            />
+        )
         expect(wrapper).toMatchSnapshot();
     });
 
