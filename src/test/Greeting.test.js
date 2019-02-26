@@ -5,7 +5,6 @@ import { shallow } from 'enzyme';
 
 describe('Greeting', () => {
     let wrapper;
-
     
     it('renders correctly', () => {
         expect(wrapper).toMatchSnapshot();
