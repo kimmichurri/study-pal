@@ -43,16 +43,13 @@ export default class StudyApp extends Component {
     }
 
     chooseStringCategory = (e) => {
-        if (e.target.innerText === 'String Prototype Methods') {
             let stringQuestions = this.state.flashcardData.filter((question) => {
                 return question.category === "String Methods"
             })
             this.setState({
                 flashcards: stringQuestions,
                 currentFlashcardIndex: 0
-
             })
-        }   
     }
 
     incrementCurrentIndex = () => {
