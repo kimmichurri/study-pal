@@ -26,7 +26,6 @@ export default class Flashcard extends Component {
         let incorrectlyAnsweredCard = this.props.flashcards[this.props.currentIndex];
         this.props.studyBank.push(incorrectlyAnsweredCard);
         localStorage.setItem("study bank cards", JSON.stringify(this.props.studyBank));
-        console.log(this.props.studyBank);
     }
 
     showNextFlashcard = () => {
