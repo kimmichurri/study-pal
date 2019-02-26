@@ -2,16 +2,6 @@ import React from 'react';
 import DisplayQuestionsAndAnswers from '../DisplayQuestionsAndAnswers';
 import { shallow } from 'enzyme';
 
-//this is what gets passed to this component:
-{/* <DisplayQuestionsAndAnswers 
-                    flashcard={this.props.flashcards[this.props.currentIndex]} 
-                    validateAnswer={this.validateAnswer}
-                    correctAnswer={this.state.correctAnswer}
-                    showNextFlashcard={this.showNextFlashcard}
-                    currentIndex={this.props.currentIndex}
-                    allFlashcards={this.props.flashcards}
-                />  */}
-
 const mockAllFlashcards = [
     {
         "id": "a257e858-36c6-11e9-b210-d663bd873d93",
@@ -22,8 +12,6 @@ const mockAllFlashcards = [
         "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim"
     }
 ]
-
-const mockQuestion = mockAllFlashcards[0].question;
 
 let mockIndex = 1;
 
@@ -83,7 +71,7 @@ describe('DisplayQuestionsAndAnswers', () => {
                 currentIndex={mockIndex}
                 allFlashcards={mockAllFlashcards}
             />
-        )
+        );
         expect(wrapper).toMatchSnapshot();
     });
 
