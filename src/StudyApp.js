@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import brainLogo from './assets/brainimg.png';
-import Header from './Header'
-import Flashcard from './Flashcard'
-import Greeting from './Greeting'
+import Header from './Header';
+import Flashcard from './Flashcard';
+import Greeting from './Greeting';
 
 
 export default class StudyApp extends Component {

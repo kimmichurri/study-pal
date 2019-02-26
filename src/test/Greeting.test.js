@@ -4,12 +4,10 @@ import { shallow } from 'enzyme';
 
 
 describe('Greeting', () => {
+    let wrapper;
 
     
-    it('should render greeting with snapshot', () => {
-        const wrapper = shallow(
-            <Greeting />
-        )
+    it('renders correctly', () => {
         expect(wrapper).toMatchSnapshot();
     })
 })
