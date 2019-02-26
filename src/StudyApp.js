@@ -26,13 +26,10 @@ export default class StudyApp extends Component {
     }
 
     chooseStudyBank = (e) => {
-        const studyBanksCards = this.state.studyBank
-        if (e.target.innerText === 'Study Bank') {
             this.setState({
-                flashcards: studyBanksCards,
+                flashcards: this.state.studyBank,
                 currentFlashcardIndex: 0
             })
-        }
     }
 
     chooseArrayCategory = (e) => {
