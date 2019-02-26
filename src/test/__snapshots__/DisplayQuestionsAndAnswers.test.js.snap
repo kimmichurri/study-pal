@@ -1,7 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DisplayQuestionsAndAnswers should match the snapshot if mockIndex === mockAllFlashcards.length 1`] = `undefined`;
+exports[`DisplayQuestionsAndAnswers should match the snapshot if props.correct answer 1`] = `
+<section>
+  <p
+    className="question-text"
+  >
+    That's right!
+  </p>
+  <button
+    className="answer-text"
+  >
+    Crushed it! Keep Going!
+  </button>
+</section>
+`;
 
-exports[`DisplayQuestionsAndAnswers should match the snapshot if mockIndex === mockFlashcards.length 1`] = `undefined`;
-
-exports[`DisplayQuestionsAndAnswers should match the snapshot if props.currentIndex === props.allFlashcards.length 1`] = `undefined`;
+exports[`DisplayQuestionsAndAnswers should match the snapshot if props.currentIndex === props.allFlashcards.length 1`] = `<StartOverNotice />`;
