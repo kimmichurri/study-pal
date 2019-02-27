@@ -16,12 +16,12 @@ export default class Flashcard extends Component {
             }
             this.setState({
                 correctAnswer: true
-            })
+            });
         } else {
             this.setState({
                 correctAnswer: false
             }) 
-            this.sendToStudyBank() 
+            this.sendToStudyBank();
         }
     }
 
@@ -36,15 +36,12 @@ export default class Flashcard extends Component {
         localStorage.setItem("study bank cards", JSON.stringify(this.props.studyBank));
     }
 
-    
-
     showNextFlashcard = () => {
         this.setState({
             correctAnswer: null,
         })
-        this.props.incrementCurrentIndex()
+        this.props.incrementCurrentIndex();
     }
-    
 
     render() {
         return (

@@ -18,17 +18,16 @@ let mockIndex = 1;
 let mockCorrectAnswer;
 
 describe('DisplayQuestionsAndAnswers', () => {
+
     let wrapper;
 
-
     it('should match the snapshot if props.currentIndex === props.allFlashcards.length', () => {
-
         const wrapper = shallow( 
             <DisplayQuestionsAndAnswers 
-                    flashcard={mockAllFlashcards[mockIndex]} 
-                    currentIndex={mockIndex}
-                    allFlashcards={mockAllFlashcards}
-                /> 
+                flashcard={mockAllFlashcards[mockIndex]} 
+                currentIndex={mockIndex}
+                allFlashcards={mockAllFlashcards}
+            /> 
         );
         expect(wrapper).toMatchSnapshot();
     });
@@ -39,11 +38,11 @@ describe('DisplayQuestionsAndAnswers', () => {
 
         const wrapper = shallow(
             <DisplayQuestionsAndAnswers 
-                    flashcard={mockAllFlashcards[mockIndex]} 
-                    correctAnswer={mockCorrectAnswer}
-                    currentIndex={mockIndex}
-                    allFlashcards={mockAllFlashcards}
-                />
+                flashcard={mockAllFlashcards[mockIndex]} 
+                correctAnswer={mockCorrectAnswer}
+                currentIndex={mockIndex}
+                allFlashcards={mockAllFlashcards}
+            />
         );
         expect(wrapper).toMatchSnapshot();
     });
@@ -65,7 +64,8 @@ describe('DisplayQuestionsAndAnswers', () => {
 
     it('should return a flashcard', () => {
         mockIndex = 0;
-        wrapper = shallow(
+
+        const wrapper = shallow(
             <DisplayQuestionsAndAnswers 
                 flashcard={mockAllFlashcards[mockIndex]} 
                 currentIndex={mockIndex}

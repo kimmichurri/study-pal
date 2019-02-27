@@ -2,8 +2,7 @@ import React from 'react';
 import StartOverNotice from './StartOverNotice';
 
 export default function DisplayQuestionsAndAnswers(props) {
-console.log(props.currentIndex)
-console.log(props.allFlashcards.length)
+    
         if (props.currentIndex === props.allFlashcards.length) {
             return (
             <StartOverNotice />
@@ -11,18 +10,18 @@ console.log(props.allFlashcards.length)
         }
 
         if (props.correctAnswer) {
-         return (
-             <section>
-                 <p className="question-text">That's right!</p>
-                 <button onClick={props.showNextFlashcard} className="answer-text correct-answer">Crushed it! Keep Going!</button>
-             </section>
-         )
+            return (
+                <section>
+                    <p className="question-text">That's right!</p>
+                    <button onClick={props.showNextFlashcard} className="answer-text correct-answer">Crushed it! Keep Going!</button>
+                </section>
+            )
          } else if (props.correctAnswer === false) {
-         return (
-             <section>
-                 <p className="question-text">Nice try, but incorrect. Let's add this question to your Study Bank for later!</p>
-                 <button onClick={props.showNextFlashcard} className="answer-text incorrect-answer">Keep Trying!</button>
-             </section>
+            return (
+                <section>
+                    <p className="question-text">Nice try, but incorrect. Let's add this question to your Study Bank for later!</p>
+                    <button onClick={props.showNextFlashcard} className="answer-text incorrect-answer">Keep Trying!</button>
+                </section>
              )
          } 
 
