@@ -74,5 +74,5 @@ describe('DisplayQuestionsAndAnswers', () => {
         );
         expect(wrapper).toMatchSnapshot();
     });
-
+    
 });
