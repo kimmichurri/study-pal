@@ -43,6 +43,31 @@ describe('StudyApp', () => {
         expect(wrapper.state('flashcards')).toEqual(mockStudyBank);
     });
 
+    it('should filter an array of array method flashcards when chooseStringCategory is invoked', () => {
+        const mockFlashcards = [
+            {
+                "id": "a257df02-36c6-11e9-b210-d663bd873d93",
+                "category": "String Methods",
+                "question": "I am given the string 'Turing School of Software and Design' and I need to return an array with each word as an element. Which syntax of .split() will accomplish this?",
+                "answerChoices": [".split(' ')", ".split('')", ".split()"],
+                "correctAnswer": ".split(' ')",
+                "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split"
+            },
+            {
+                "id": "a257e1aa-36c6-11e9-b210-d663bd873d93",
+                "category": "Array Methods",
+                "question": "I typed in 'Kim Myers'.join() to join these two words into one and received an error message. Why is that?",
+                "answerChoices": [".join() is an array method and cannot be used on a string", ".join() is missing quotation marks within the parenthesis", "You need to store the string in a variable before using .join()"],
+                "correctAnswer": ".join() is an array method and cannot be used on a string",
+                "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join"
+            }
+        ]
+        expect(wrapper.state('flashcards')).toEqual([]);
+        wrapper.instance().state.flashcardData = mockFlashcards;
+        wrapper.instance().chooseArrayCategory();
+        expect(wrapper.state('flashcards')).toEqual([mockFlashcards[1]]);
+    });
+
     it('should filter an array of string method flashcards when chooseStringCategory is invoked', () => {
         const mockFlashcards = [
             {
@@ -94,7 +119,4 @@ describe('StudyApp', () => {
         wrapper.instance().state.flashcards = mockFlashcards;
         expect(wrapper).toMatchSnapshot();
     })
-
-
-
 });
