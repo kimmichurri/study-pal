@@ -8,7 +8,7 @@ exports[`DisplayQuestionsAndAnswers should match the snapshot if props.correct a
     Nice try, but incorrect. Let's add this question to your Study Bank for later!
   </p>
   <button
-    className="answer-text"
+    className="answer-text incorrect-answer"
   >
     Keep Trying!
   </button>
@@ -23,7 +23,7 @@ exports[`DisplayQuestionsAndAnswers should match the snapshot if props.correct a
     That's right!
   </p>
   <button
-    className="answer-text"
+    className="answer-text correct-answer"
   >
     Crushed it! Keep Going!
   </button>

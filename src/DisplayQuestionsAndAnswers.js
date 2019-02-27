@@ -13,14 +13,14 @@ export default function DisplayQuestionsAndAnswers(props) {
          return (
              <section>
                  <p className="question-text">That's right!</p>
-                 <button onClick={props.showNextFlashcard} className="answer-text">Crushed it! Keep Going!</button>
+                 <button onClick={props.showNextFlashcard} className="answer-text correct-answer">Crushed it! Keep Going!</button>
              </section>
          )
          } else if (props.correctAnswer === false) {
          return (
              <section>
                  <p className="question-text">Nice try, but incorrect. Let's add this question to your Study Bank for later!</p>
-                 <button onClick={props.showNextFlashcard} className="answer-text">Keep Trying!</button>
+                 <button onClick={props.showNextFlashcard} className="answer-text incorrect-answer">Keep Trying!</button>
              </section>
              )
          } 

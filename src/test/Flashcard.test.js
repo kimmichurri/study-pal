@@ -13,12 +13,11 @@ const mockFlashcards = [
     }
 ]
 
-let mockCorrectAnswer;
+
+const mockCurrentIndex = 0;
 
 describe('Flashcard', () => {
     
-    let wrapper;
-
     it('should have the proper default state', () => {
 
         const wrapper = shallow(
@@ -31,43 +30,51 @@ describe('Flashcard', () => {
         });
     });
 
-    it.skip('should change the state of correct answer to true if correct answer is selected', () => {
-
+    it('should change the state of correct answer to true if correct answer is selected', () => {
         const wrapper = shallow(
             <Flashcard 
                 flashcards={mockFlashcards}
+                currentIndex={mockCurrentIndex}
             />
         );
-        mockCorrectAnswer = true;
-        wrapper.instance().validateAnswer();
-        wrapper.instance().state.correctAnswer = mockCorrectAnswer;
+        let mockInnerText = {target: {innerText: ".trim()" }}
+        wrapper.instance().validateAnswer(mockInnerText);
         expect(wrapper.state()).toEqual({
             correctAnswer: true
         });
     });
 
     it('should change the state of correct answer to false if correct answer is not selected', () => {
-        
         const wrapper = shallow(
             <Flashcard 
                 flashcards={mockFlashcards}
+                currentIndex={mockCurrentIndex}
             />
-    });
-
-    it('should push an incorrectly answered flashcard into the study bank', () => {
-
-        const wrapper = shallow(
-            <Flashcard 
-                flashcards={mockFlashcards}
-            />
+        );
+        let mockInnerText = {target: {innerText: ".slim()" }}
+        //mock sendToStudyBank
+        wrapper.instance().sendToStudyBank = () => { return true }
+        wrapper.instance().validateAnswer(mockInnerText);
+        expect(wrapper.state()).toEqual({
+            correctAnswer: false
+        });
     });
 
     it('should reset correct answer to null and call incrementCurrentIndex function', () => {
 
+        const mockIncrementCurrentIndex = jest.fn();
+
         const wrapper = shallow(
             <Flashcard 
                 flashcards={mockFlashcards}
+                incrementCurrentIndex={mockIncrementCurrentIndex}
             />
+        );
+        wrapper.instance().showNextFlashcard();
+        expect(wrapper.state()).toEqual({
+            correctAnswer: null
+        });
+        expect(mockIncrementCurrentIndex).toBeCalled();
     });
 
     it('should match the snapshot when rendering', () => {
@@ -79,5 +86,4 @@ describe('Flashcard', () => {
         );
         expect(wrapper).toMatchSnapshot();
     });
-
 });
