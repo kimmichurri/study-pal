@@ -16,7 +16,7 @@
     box-shadow: $inactive-button-box-shadow;
     color: #FFF;
     font-family: $user-choice-buttons-font-stack;
-    font-size: 20px;
+    font-size: 30px;
     min-height: 100px;
     margin: auto;
     padding: 10px;
@@ -26,4 +26,21 @@
             box-shadow: $active-button-box-shadow;
             cursor: pointer;
         }
+}
+
+button {
+    outline: none;
+}
+
+//MEDIA QUERY FOR MOBILE
+
+@media screen and (max-width: 850px) {
+    .study-choice-buttons-container {
+        display: flex;
+        flex-direction: column;
+    }
+    .study-choice-buttons {
+        margin: 20px auto;
+        width: 100%;
+    }
 }
