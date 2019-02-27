@@ -11,6 +11,9 @@ export default class Flashcard extends Component {
 
     validateAnswer =(e) => {
         if (e.target.innerText === this.props.flashcards[this.props.currentIndex].correctAnswer) {
+            if (this.props.studyBank.includes(this.props.flashcards[this.props.currentIndex])) {
+                this.removeFromStudyBank();
+            }
             this.setState({
                 correctAnswer: true
             })
@@ -27,6 +30,13 @@ export default class Flashcard extends Component {
         this.props.studyBank.push(incorrectlyAnsweredCard);
         localStorage.setItem("study bank cards", JSON.stringify(this.props.studyBank));
     }
+
+    removeFromStudyBank() {
+        this.props.studyBank.splice(this.props.currentIndex, 1);
+        localStorage.setItem("study bank cards", JSON.stringify(this.props.studyBank));
+    }
+
+    
 
     showNextFlashcard = () => {
         this.setState({

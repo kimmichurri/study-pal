@@ -2,7 +2,8 @@ import React from 'react';
 import StartOverNotice from './StartOverNotice';
 
 export default function DisplayQuestionsAndAnswers(props) {
-
+console.log(props.currentIndex)
+console.log(props.allFlashcards.length)
         if (props.currentIndex === props.allFlashcards.length) {
             return (
             <StartOverNotice />
