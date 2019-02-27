@@ -3,6 +3,7 @@ import brainLogo from './assets/brainimg.png';
 import Header from './Header';
 import Flashcard from './Flashcard';
 import Greeting from './Greeting';
+// import StudyBankMessage from './StudyBankMessage';
 
 
 export default class StudyApp extends Component {
@@ -29,7 +30,10 @@ export default class StudyApp extends Component {
             this.setState({
                 flashcards: this.state.studyBank,
                 currentFlashcardIndex: 0
-            })
+            });
+            // if(this.state.studyBank.length === 0) {
+            //     this.handleEmptyStudyBank();
+            // }
     }
 
     chooseArrayCategory = () => {
@@ -57,6 +61,13 @@ export default class StudyApp extends Component {
             currentFlashcardIndex: this.state.currentFlashcardIndex + 1
         })
     }
+
+    // handleEmptyStudyBank = () => {
+    //     console.log('handle');
+    //     return (
+    //             <StudyBankMessage />
+    //     )    
+    // }
 
     render() {
         let numberOfStudyQuestions = this.state.studyBank.length;
