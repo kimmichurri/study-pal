@@ -12,7 +12,7 @@ describe('StudyApp', () => {
 
         wrapper = shallow(
             <StudyApp 
-            chooseArrayCategory={chooseArrayCategoryMock}
+                chooseArrayCategory={chooseArrayCategoryMock}
             />
         )
     });

@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Flashcard should match the snapshot when rendering 1`] = `
+<article
+  className="flashcard-container"
+>
+  <DisplayQuestionsAndAnswers
+    allFlashcards={
+      Array [
+        Object {
+          "answerChoices": Array [
+            ".trim()",
+            ".slim()",
+            ".clip()",
+          ],
+          "category": "String Methods",
+          "correctAnswer": ".trim()",
+          "id": "a257e858-36c6-11e9-b210-d663bd873d93",
+          "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim",
+          "question": "Which method allows you to remove whitespace from either end of a string?",
+        },
+      ]
+    }
+    correctAnswer={null}
+    showNextFlashcard={[Function]}
+    validateAnswer={[Function]}
+  />
+</article>
+`;
