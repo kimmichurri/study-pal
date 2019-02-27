@@ -25,14 +25,14 @@ export default class StudyApp extends Component {
             .catch(error => {throw new Error(error)})
     }
 
-    chooseStudyBank = (e) => {
+    chooseStudyBank = () => {
             this.setState({
                 flashcards: this.state.studyBank,
                 currentFlashcardIndex: 0
             })
     }
 
-    chooseArrayCategory = (e) => {
+    chooseArrayCategory = () => {
             let arrayQuestions = this.state.flashcardData.filter((question) => {
                 return question.category === "Array Methods"
             })
@@ -42,7 +42,7 @@ export default class StudyApp extends Component {
             })
     }
 
-    chooseStringCategory = (e) => {
+    chooseStringCategory = () => {
             let stringQuestions = this.state.flashcardData.filter((question) => {
                 return question.category === "String Methods"
             })
@@ -65,9 +65,9 @@ export default class StudyApp extends Component {
                 <Header />
                 <img src={brainLogo} className="study-pal-logo" alt="brain-logo" />
                 <section className= "study-choice-buttons-container">
-                    <button onClick={this.chooseArrayCategory} className="study-choice-buttons">Array Prototype Methods</button>
-                    <button onClick={this.chooseStringCategory} className="study-choice-buttons">String Prototype Methods</button>
-                    <button onClick={this.chooseStudyBank} className="study-choice-buttons">Study Bank ({numberOfStudyQuestions})</button>
+                    <button onClick={this.chooseArrayCategory} className="study-choice-buttons array-button">Array Prototype Methods</button>
+                    <button onClick={this.chooseStringCategory} className="study-choice-buttons string-button">String Prototype Methods</button>
+                    <button onClick={this.chooseStudyBank} className="study-choice-buttons study-bank-button">Study Bank ({numberOfStudyQuestions})</button>
                 </section>
                 {!this.state.flashcards.length && (
                     <Greeting />

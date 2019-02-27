@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StudyApp should display flashcard if the user has selected flashcards 1`] = `
+<div>
+  <Header />
+  <img
+    alt="brain-logo"
+    className="study-pal-logo"
+    src="brainimg.png"
+  />
+  <section
+    className="study-choice-buttons-container"
+  >
+    <button
+      className="study-choice-buttons array-button"
+      onClick={[Function]}
+    >
+      Array Prototype Methods
+    </button>
+    <button
+      className="study-choice-buttons string-button"
+      onClick={[Function]}
+    >
+      String Prototype Methods
+    </button>
+    <button
+      className="study-choice-buttons study-bank-button"
+      onClick={[Function]}
+    >
+      Study Bank (
+      0
+      )
+    </button>
+  </section>
+  <Greeting />
+</div>
+`;
+
+exports[`StudyApp should display header and greeting by default 1`] = `
+<div>
+  <Header />
+  <img
+    alt="brain-logo"
+    className="study-pal-logo"
+    src="brainimg.png"
+  />
+  <section
+    className="study-choice-buttons-container"
+  >
+    <button
+      className="study-choice-buttons array-button"
+      onClick={[Function]}
+    >
+      Array Prototype Methods
+    </button>
+    <button
+      className="study-choice-buttons string-button"
+      onClick={[Function]}
+    >
+      String Prototype Methods
+    </button>
+    <button
+      className="study-choice-buttons study-bank-button"
+      onClick={[Function]}
+    >
+      Study Bank (
+      0
+      )
+    </button>
+  </section>
+  <Greeting />
+</div>
+`;
