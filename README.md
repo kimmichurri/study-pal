@@ -9,8 +9,8 @@ Brush up on your coding skills and study array and string proptype methods with 
 ## Install/Setup
 
 Clone this repo  
-Run npm install from the root directory  
-Run npm start and visit localhost:3000 in your browser  
+Run `npm install` from the root directory  
+Run `npm start` and visit `localhost:3000` in your browser  
 
 ## Technologies
 
